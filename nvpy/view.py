@@ -503,6 +503,7 @@ class TriggeredcompleteEntry(tk.Entry):
         # exceptions checking for instance variables that don't exist yet.
         self.set_completion_list([])
         self.bind('<KeyRelease>', self.handle_keyrelease)               
+        self.cycle = 0
 
     def set_completion_list(self, completion_list):
         self._completion_list = completion_list
