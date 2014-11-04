@@ -109,7 +109,8 @@ class Config:
         cp = ConfigParser.SafeConfigParser(defaults)
         # later config files overwrite earlier files
         # try a number of alternatives
-        self.files_read = cp.read([os.path.join(app_dir, 'nvpy.cfg'),
+        self.files_read = cp.read([os.path.join(os.getcwd(), 'nvpy.cfg'),
+                                   os.path.join(app_dir, 'nvpy.cfg'),
                                    os.path.join(home, 'nvpy.cfg'),
                                    os.path.join(home, '.nvpy.cfg'),
                                    os.path.join(home, '.nvpy'),
