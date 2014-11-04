@@ -132,7 +132,7 @@ class Config:
         self.sn_password = cp.get(cfg_sec, 'sn_password', raw=True)
         self.simplenote_sync = cp.getint(cfg_sec, 'simplenote_sync')
         # make logic to find in $HOME if not set
-        self.db_path = cp.get(cfg_sec, 'db_path')
+        self.db_path = os.path.expandvars(os.path.expanduser(cp.get(cfg_sec, 'db_path')))
         #  0 = alpha sort, 1 = last modified first
         self.notes_as_txt = cp.getint(cfg_sec, 'notes_as_txt')
         self.txt_path = os.path.join(home, cp.get(cfg_sec, 'txt_path'))
